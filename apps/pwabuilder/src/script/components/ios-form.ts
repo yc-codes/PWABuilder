@@ -261,6 +261,23 @@ export class IOSForm extends AppPackageFormBase {
                   inputHandler: (val: string) => this.packageOptions.permittedUrls = val.split(',').map(i => i.trim()).filter(i => !!i)
                 })}
             </div>
+
+            <div>
+              <div class="form-group">
+                <label>Supports Save to Photos</label>
+                <div class="form-check">
+                  ${this.renderFormInput({
+                    label: 'Enable',
+                    tooltip: 'If enabled, prevents iOS PWA app crashes when saving images to your device\'s photo library.',
+                    inputId: 'supports-save-to-photos',
+                    type: 'checkbox',
+                    checked: this.packageOptions.supportSaveToGallery === true,
+                    inputHandler: (_, checked) => this.packageOptions.supportSaveToGallery = checked
+                  })}
+                </div>
+              </div>
+            </div>
+
             </sl-details>
         </div>
       </form>

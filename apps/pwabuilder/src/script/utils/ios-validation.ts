@@ -11,6 +11,7 @@ export interface IOSAppPackageOptions extends PackageOptions {
   url: string;
   imageUrl: string;
   splashColor: string;
+  supportSaveToGallery: boolean;
   progressBarColor: string;
   statusBarColor: string;
   permittedUrls: string[];
